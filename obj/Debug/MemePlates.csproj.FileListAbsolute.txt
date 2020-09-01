@@ -1,0 +1,15 @@
+C:\Users\Ben\source\repos\MemePlates\bin\Debug\MemePlates.exe.config
+C:\Users\Ben\source\repos\MemePlates\bin\Debug\MemePlates.exe
+C:\Users\Ben\source\repos\MemePlates\bin\Debug\MemePlates.pdb
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates.csprojAssemblyReference.cache
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MainWindow.g.cs
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\App.g.cs
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates_MarkupCompile.cache
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates_MarkupCompile.lref
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MainWindow.baml
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates.g.resources
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates.Properties.Resources.resources
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates.csproj.GenerateResource.cache
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates.csproj.CoreCompileInputs.cache
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates.exe
+C:\Users\Ben\source\repos\MemePlates\obj\Debug\MemePlates.pdb
