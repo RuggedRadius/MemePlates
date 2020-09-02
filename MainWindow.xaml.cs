@@ -70,6 +70,21 @@ namespace MemePlates
                         Console.WriteLine("Showing");
                     }
                 };
+            // Context menu
+            System.Windows.Forms.ContextMenu trayContextMenu = new System.Windows.Forms.ContextMenu();
+
+            // Shutdown
+            System.Windows.Forms.MenuItem cmExit = new System.Windows.Forms.MenuItem();
+            cmExit.Text = "Exit";
+            cmExit.Click += CmExit_Click;
+            trayContextMenu.MenuItems.Add(cmExit);
+
+            ni.ContextMenu = trayContextMenu;
+        }
+
+        private void CmExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         protected override void OnStateChanged(EventArgs e)
@@ -105,12 +120,13 @@ namespace MemePlates
             // Check if folder initialisation is needed
             if (!Directory.Exists(MEME_DIRECTORY_ROOT))
             {
-                MessageBox.Show("No folder");
+                
                 Directory.CreateDirectory(MEME_DIRECTORY_ROOT);
                 Directory.CreateDirectory(MEME_DIRECTORY_ROOT + "\\Reactions");
                 Directory.CreateDirectory(MEME_DIRECTORY_ROOT + "\\Rename me 1");
                 Directory.CreateDirectory(MEME_DIRECTORY_ROOT + "\\Rename me 2");
                 File.Create(MEME_DIRECTORY_ROOT + "\\put memes here.txt");
+                MessageBox.Show("A 'Memes' folder has been created in the same directory as this application.\n\nStore your memes in this folder, or it's sub-folders, to use them in MemePlates.", "Meme Folder Created", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
             // Get sub-directories
