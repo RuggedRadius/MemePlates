@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:MemePlates"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Image x:Key="pepe" Source="pepe.ico" />
     </Application.Resources>
 </Application>
