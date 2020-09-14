@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MemePlates" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" Icon="Resources/pepe.ico" Closing="Window_Closing" Closed="wndMain_Closed">
 
+    <Window.Style>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="./Resources/Resources#8-BIT WONDER" />
+        </Style>
+    </Window.Style>
     <DockPanel x:Name="dpMaster">
 
 
@@ -32,12 +37,12 @@
 
         <ToolBar x:Name="tbToolBarMain" DockPanel.Dock="Top" Background="#FF1F1E1E" Foreground="White">
             <Label Content="Meme Size:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" />
-            <Slider x:Name="sliderImageSize" Width="200" ValueChanged="sliderImageSize_ValueChanged" Maximum="100" Minimum="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,7,0,0"></Slider>
+            <Slider x:Name="sliderImageSize" Width="200" ValueChanged="sliderImageSize_ValueChanged" Maximum="100" Minimum="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,7,0,0" Value="18"></Slider>
 
             <Separator Width="1" BorderThickness="0" Margin="10,2" />
 
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                <CheckBox x:Name="chkNotificationsOn" Content="Notifications on" Width="120" Foreground="White" />
+                <CheckBox x:Name="chkNotificationsOn" Content="Notifications on" Width="120" Foreground="White" IsChecked="True" />
             </Grid>
             <Separator Width="1" BorderThickness="0" Margin="10,2" />
 
@@ -57,11 +62,11 @@
         </ToolBar>
 
         <Grid>
-            <TabControl x:Name="tabMain" VerticalAlignment="Stretch" TabStripPlacement="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" Margin="0" ScrollViewer.CanContentScroll="True" Background="#FF242424" BorderThickness="0">
+            <TabControl x:Name="tabMain" VerticalAlignment="Stretch" TabStripPlacement="Left" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" Margin="0" ScrollViewer.CanContentScroll="True" Background="#FF242424" BorderThickness="0" FontFamily="/MemePlates;component/Resources/#8BIT WONDER Nominal">
 
                 <TabControl.Resources>
                     <Style TargetType="{x:Type Grid}">
-                        <Setter Property="Background" Value="#FF242424"/>
+                        <Setter Property="Background" Value="#000000"/>
                     </Style>
                     <Style TargetType="TabItem">
                         <Setter Property="Template">
@@ -75,6 +80,9 @@
                                         Margin="10,2"/>
                                     </Grid>
                                     <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter TargetName="Panel" Property="Background" Value="Black" />
+                                        </Trigger>
                                         <Trigger Property="IsSelected" Value="True">
                                             <Setter TargetName="Panel" Property="Background" Value="#FF1B4F5F" />
                                             <Setter Property="Foreground" Value="White"></Setter>
@@ -83,12 +91,17 @@
                                             <Setter TargetName="Panel" Property="Background" Value="Black" />
                                             <Setter Property="Foreground" Value="White"></Setter>
                                         </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Panel" Property="Background" Value="#FF1B4F5F" />                                            
+                                        </Trigger>
+
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                     </Style>
                 </TabControl.Resources>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="225,215,0,0" VerticalAlignment="Top" Width="100" OpacityMask="Black"/>
 
             </TabControl>
         </Grid>

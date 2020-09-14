@@ -96,6 +96,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\8-BIT WONDER.TTF" />
+    <None Include="Resources\Busy.ani" />
+    <None Include="Resources\NormalSelect.ani" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -108,6 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\arrow_refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="9k.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

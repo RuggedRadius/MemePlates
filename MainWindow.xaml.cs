@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -44,6 +46,10 @@ namespace MemePlates
             // Load images
             LoadMemes();
 
+            // Create custom cursor
+            //this.Cursor = new Cursor(new MemoryStream(Properties.Resources.NormalSelect));
+            tabMain.SelectedIndex = 1;
+
             wndMain.KeyDown += WndMain_KeyDown;
         }
 
@@ -57,29 +63,47 @@ namespace MemePlates
             ni.Click +=
                 delegate (object sender, EventArgs args)
                 {
-                    if (this.IsVisible)
+                    System.Windows.Forms.MouseEventArgs mouseEvent = (System.Windows.Forms.MouseEventArgs)args;
+                    if (mouseEvent.Button == System.Windows.Forms.MouseButtons.Left)
                     {
-                        this.Hide();
-                        Console.WriteLine("Hiding");
+                        if (this.IsVisible)
+                        {
+                            this.Hide();
+                            Console.WriteLine("Hiding");
+                        }
+                        else
+                        {
+                            this.Show();
+                            wndMain.Activate();
+                            sliderImageSize.Focus();
+                            Console.WriteLine("Showing");
+                        }
                     }
-                    else
-                    {
-                        this.Show();
-                        wndMain.Activate();
-                        sliderImageSize.Focus();
-                        Console.WriteLine("Showing");
-                    }
+
                 };
-            // Context menu
-            System.Windows.Forms.ContextMenu trayContextMenu = new System.Windows.Forms.ContextMenu();
+
+            // Add context menu to tray icon
+            ni.ContextMenu = BuildContextMenu();
+        }
+
+        private System.Windows.Forms.ContextMenu BuildContextMenu()
+        {
+            // Initialise Context menu
+            System.Windows.Forms.ContextMenu cMenu = new System.Windows.Forms.ContextMenu();
+
+            // Refresh
+            System.Windows.Forms.MenuItem cmRefresh = new System.Windows.Forms.MenuItem();
+            cmRefresh.Text = "Refresh";
+            cmRefresh.Click += delegate (object sender, EventArgs args) { RefreshMemes(); };
+            cMenu.MenuItems.Add(cmRefresh);
 
             // Shutdown
             System.Windows.Forms.MenuItem cmExit = new System.Windows.Forms.MenuItem();
             cmExit.Text = "Exit";
             cmExit.Click += CmExit_Click;
-            trayContextMenu.MenuItems.Add(cmExit);
+            cMenu.MenuItems.Add(cmExit);
 
-            ni.ContextMenu = trayContextMenu;
+            return cMenu;
         }
 
         private void CmExit_Click(object sender, EventArgs e)
@@ -143,6 +167,7 @@ namespace MemePlates
                 TabItem newTab = new TabItem();
                 newTab.Header = dir.Name;
                 newTab.Height = 50;
+                newTab.Width = 250;
                 tabMain.Items.Add(newTab);
 
                 // Create wrap panel
@@ -326,9 +351,7 @@ namespace MemePlates
             imageMeme.Tag = file.FullName;
 
             // Add handler
-            imageMeme.MouseDown += UiImageElement_MouseDown; 
-
-            
+            imageMeme.MouseDown += UiImageElement_MouseDown;
 
             // Add to list
             uiImageElements.Add(imageMeme);
@@ -376,6 +399,7 @@ namespace MemePlates
                 ni.ShowBalloonTip(2, "", "Copied to clipboard.", System.Windows.Forms.ToolTipIcon.None);
             }
         }
+
 
         private void sliderImageSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
