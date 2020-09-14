@@ -36,6 +36,8 @@ namespace MemePlates
         private int totalMemes = 0;
         private int totalSubDirs = 0;
 
+        private int tabItemWidth = 350;
+
         // Constructor
         public MainWindow()
         {
@@ -167,7 +169,7 @@ namespace MemePlates
                 TabItem newTab = new TabItem();
                 newTab.Header = dir.Name;
                 newTab.Height = 50;
-                newTab.Width = 250;
+                newTab.Width = tabItemWidth;
                 tabMain.Items.Add(newTab);
 
                 // Create wrap panel

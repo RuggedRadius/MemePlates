@@ -82,17 +82,22 @@
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsMouseOver" Value="False">
                                             <Setter TargetName="Panel" Property="Background" Value="Black" />
+                                            <Setter Property="FontSize" Value="12" />
                                         </Trigger>
                                         <Trigger Property="IsSelected" Value="True">
                                             <Setter TargetName="Panel" Property="Background" Value="#FF1B4F5F" />
                                             <Setter Property="Foreground" Value="White"></Setter>
+                                            <Setter Property="FontSize" Value="18" />
+
                                         </Trigger>
                                         <Trigger Property="IsSelected" Value="False">
                                             <Setter TargetName="Panel" Property="Background" Value="Black" />
                                             <Setter Property="Foreground" Value="White"></Setter>
+                                            <Setter Property="FontSize" Value="12" />
                                         </Trigger>
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter TargetName="Panel" Property="Background" Value="#FF1B4F5F" />                                            
+                                            <Setter Property="FontSize" Value="18" />                                            
                                         </Trigger>
 
                                     </ControlTemplate.Triggers>

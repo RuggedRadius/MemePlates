@@ -112,8 +112,5 @@
   <ItemGroup>
     <Resource Include="Resources\arrow_refresh.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="9k.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
