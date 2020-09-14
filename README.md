@@ -16,9 +16,7 @@ Use the above link to download MemePlates.
 
 |Version                |Displays in MemePlates         |
 |----------------|-------------------------------|
-|0.3  |- Improved system tray icon context menu 
-       - Changes to UI design
-       - Added 8mn file limit warning for Discord|
+|0.3  |* Improved system tray icon context menu * Changes to UI design * Added 8mb file limit warning for Discord |
 
 
 ## Quick Start
