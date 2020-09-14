@@ -5,10 +5,21 @@ A Windows application to quickly access memes, copying them to your clipboard wi
 
 ## Download
 
-#### Version 0.2
+#### Version 0.3
 <a href="https://www.dropbox.com/s/smq4fanttth0ekt/MemePlates.exe?dl=0">Download latest version</a>
 
 Use the above link to download MemePlates.
+
+
+## Version History
+
+
+|Version                |Displays in MemePlates         |
+|----------------|-------------------------------|
+|0.3  |- Improved system tray icon context menu 
+       - Changes to UI design
+       - Added 8mn file limit warning for Discord|
+
 
 ## Quick Start
 1. <a href="https://www.dropbox.com/s/smq4fanttth0ekt/MemePlates.exe?dl=0">Download</a> MemePlates
