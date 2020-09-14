@@ -6,7 +6,7 @@ A Windows application to quickly access memes, copying them to your clipboard wi
 ## Download
 
 #### Version 0.2
-<a href="https://www.dropbox.com/s/smq4fanttth0ekt/MemePlates.exe?dl=0">Download Link</a>
+<a href="https://www.dropbox.com/s/smq4fanttth0ekt/MemePlates.exe?dl=0">Download latest version</a>
 
 Use the above link to download MemePlates.
 
