@@ -398,6 +398,13 @@ namespace MemePlates
                 // Toast
                 ni.ShowBalloonTip(2, "", "Copied to clipboard.", System.Windows.Forms.ToolTipIcon.None);
             }
+
+            long length = new FileInfo(path).Length;
+            float size = (length / 1024) / 1024;
+            if (size > 8)
+            {
+                MessageBox.Show("File over is 8mb limit for Discord");
+            }
         }
 
 
