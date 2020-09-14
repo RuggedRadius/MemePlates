@@ -12,11 +12,16 @@ Use the above link to download MemePlates.
 
 
 ## Version History
+#### 0.3
+* Improved system tray icon context menu.
+* Changes to UI design.
+* Added 8mb file limit warning for Discord.
 
+#### 0.2 
+* Added system tray icon, notifications and dark theme by default.
 
-|Version                |Displays in MemePlates         |
-|----------------|-------------------------------|
-|0.3  |- Improved system tray icon context menu \n* Changes to UI design * Added 8mb file limit warning for Discord |
+#### 0.1
+* Initial commit of original design.
 
 
 ## Quick Start
